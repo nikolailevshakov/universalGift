@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href=" {{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Загрузи фото родинки!</h1>
+    <form method="post" action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
+        <label for="file">Загрузить фото:</label>
+        <input type="file" name="file">
+        <label for="who">Кому</label>
+        <input type="text" name="who">
+        <label for="name">Имя родинки</label>
+        <input type="text" name="name">
+
+        <label>Выберите темплат:</label>
+        <input type="radio" id="template1" name="template" value="BG.jpg">
+        <label for="template1">Темплат 1</label>
+        <img src="{{url_for('static', filename='BG.jpg')}}" alt="Template 1">
+
+        <input type="radio" id="template2" name="template" value="BG2.jpg">
+        <label for="template2">Темплат 2</label>
+        <img src="{{url_for('static', filename='BG2.jpg')}}" alt="Template 2">
+
+        <input type="radio" id="template3" name="template" value="BG3.jpg">
+        <label for="template3">Темплат 3</label>
+        <img src="{{url_for('static', filename='BG3.jpg')}}" alt="Template 3">
+
+        <input type="submit" value="Получить сертификат">
+    </form>
+</body>
+</html>
